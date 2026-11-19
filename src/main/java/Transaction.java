@@ -7,9 +7,10 @@ public class Transaction {
     private String transactionType;
     private double amount;
     private LocalDateTime transactionDate;
+    private String accountNumber;
 
     public Transaction(String transactionId, String transactionType,
-                       double amount) {
+                       double amount, String accountNumber) {
         if (amount <= 0) {
             throw new IllegalArgumentException(
                 "Transaction amount must be greater than zero."
@@ -20,6 +21,7 @@ public class Transaction {
         this.transactionType = transactionType;
         this.amount = amount;
         this.transactionDate = LocalDateTime.now();
+        this.accountNumber = accountNumber;
     }
 
     public String getTransactionId() {
@@ -38,10 +40,15 @@ public class Transaction {
         return transactionDate;
     }
 
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
     public String getTransactionDetails() {
         return "Transaction ID: " + transactionId
                 + "\nType: " + transactionType
                 + "\nAmount: BWP " + amount
-                + "\nDate: " + transactionDate;
+                + "\nDate: " + transactionDate
+                + "\nAccount Number: " + accountNumber;
     }
 }

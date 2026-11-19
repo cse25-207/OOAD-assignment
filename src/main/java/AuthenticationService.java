@@ -11,8 +11,10 @@ public class AuthenticationService {
             return false;
         }
 
-        // Placeholder for credential verification.
-        // Real credential checking will be added later.
+        if (!customer.verifyCredentials(username, password)) {
+            return false;
+        }
+
         loggedInCustomer = customer;
         return true;
     }

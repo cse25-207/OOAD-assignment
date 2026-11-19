@@ -6,9 +6,12 @@ public class IndividualCustomer extends Customer {
     private String phone;
 
     public IndividualCustomer(int customerId, String address,
+                              String username, String password,
                               String firstName, String surname,
                               String email, String phone) {
-        super(customerId, address);
+
+        super(customerId, address, username, password);
+
         this.firstName = firstName;
         this.surname = surname;
         this.email = email;
